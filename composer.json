@@ -21,6 +21,7 @@
   },
   "require-dev": {
     "symfony/framework-bundle": "~2.8",
-    "phpunit/phpunit": "~4.3"
+    "phpunit/phpunit": "~4.3",
+    "satooshi/php-coveralls": "dev-master"
   }
 }
