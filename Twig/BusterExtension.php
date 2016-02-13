@@ -16,7 +16,7 @@ class BusterExtension extends \Twig_Extension
     protected $container;
 
     /**
-     * @var \stdClass
+     * @var array
      */
     protected $hashMap;
 
@@ -30,21 +30,21 @@ class BusterExtension extends \Twig_Extension
         $this->container = $container;
 
         $this->loadBustersFile();
+        $this->adjustAssetPath();
     }
 
     public function getFilters()
     {
-        return array(
-            new \Twig_SimpleFilter('with_buster_hash', array($this, 'addBusterHash')),
-        );
+        return [
+            new \Twig_SimpleFilter('with_buster_hash', [$this, 'addBusterHash']),
+        ];
     }
 
     public function addBusterHash($assetPath)
     {
-        $assetPath = ltrim($assetPath, "/");
-        $hash = isset($this->hashMap[$assetPath]) ? $this->hashMap[$assetPath] : 'no-buster-hash';
+        $hash = isset($this->hashMap[$assetPath]) ? $this->hashMap[$assetPath] : 'no-buster-hash-found';
 
-        return $assetPath. "?v=$hash";
+        return $assetPath . "?v=$hash";
     }
 
     public function getName()
@@ -54,9 +54,22 @@ class BusterExtension extends \Twig_Extension
 
     private function loadBustersFile()
     {
-        $rootDir    = $this->container->get('kernel')->getRootDir();
-        $busterPath = $this->container->getParameter('gulp_buster.buster_path');
+        $rootDir     = $this->container->get('kernel')->getRootDir();
+        $bustersPath = $this->container->getParameter('gulp_buster.busters_file');
 
-        $this->hashMap = json_decode(file_get_contents($rootDir . DIRECTORY_SEPARATOR . $busterPath), true);
+        $this->hashMap = json_decode(file_get_contents($rootDir . DIRECTORY_SEPARATOR . $bustersPath), true);
+    }
+
+    private function adjustAssetPath()
+    {
+        $webDir  = $this->container->getParameter('gulp_buster.web_dir');
+        $gulpDir = $this->container->getParameter('gulp_buster.gulp_dir');
+
+        $gulpToWeb = trim(str_replace($gulpDir, "", $webDir), '/');
+
+        foreach ($this->hashMap as $path => $hash) {
+            $this->hashMap[str_replace($gulpToWeb, "", $path)] = $hash;
+            unset($this->hashMap[$path]);
+        }
     }
 }

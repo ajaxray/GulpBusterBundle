@@ -22,9 +22,16 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode( 'buster_path' )
-                    ->defaultValue('busters.json')
-                ->end();
+                ->scalarNode( 'busters_file' )
+                    ->defaultValue("%kernel.root_dir%/busters.json")
+                ->end()
+                ->scalarNode( 'web_dir' )
+                    ->defaultValue("%kernel.root_dir%/../web")
+                ->end()
+                ->scalarNode( 'gulp_dir' )
+                    ->defaultValue("%kernel.root_dir%/..")
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }

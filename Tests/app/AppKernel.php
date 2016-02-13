@@ -3,7 +3,6 @@ namespace Ajaxray\GulpBusterBundle\Tests\app;
 
 use Ajaxray\GulpBusterBundle\GulpBusterBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
-use Symfony\Bundle\TwigBundle\TwigEngine;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
@@ -43,13 +42,10 @@ class AppKernel extends Kernel
 
     public function indexAction()
     {
-        /**
-         * @var TwigEngine
-         */
         $twig = $this->getContainer()->get('twig');
         $twig->setLoader(new \Twig_Loader_Array([
-            'test_twig_content' => '{{ asset("web/js/common.min.js")|bust }}',
-            'another_twig_content' => '{{ asset("web/js/common.min.css")|bust }}'
+            'test_twig_content' => '{{"/js/common.min.js"|with_buster_hash }}',
+            'another_twig_content' => '{{"/js/common.min.css"|with_buster_hash }}'
         ]));
 
         return new Response($twig->render('test_twig_content'));
