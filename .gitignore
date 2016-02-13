@@ -2,6 +2,7 @@ composer.phar
 composer.lock
 .idea/
 vendor/
+build/
 /Tests/app/cache
 /Tests/app/logs
 /Tests/report

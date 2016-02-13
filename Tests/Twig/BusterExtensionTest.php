@@ -35,4 +35,10 @@ class BusterExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('/js/common.min.js?v=the-hash-for-common-min-js', $twig->render('hash_found_twig_content'));
         $this->assertEquals('/js/uncommon.min.css?v=no-buster-hash-found', $twig->render('hash_missing_twig_content'));
     }
+
+    public static function tearDownAfterClass()
+    {
+        $kernel = new AppKernel('test', true);
+        exec("rm -rf {$kernel->getCacheDir()}");
+    }
 }
