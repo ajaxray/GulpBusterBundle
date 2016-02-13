@@ -1,0 +1,25 @@
+{
+  "name"             : "ajaxray/gulp-buster-bundle",
+  "description"      : "",
+  "minimum-stability": "dev",
+  "license"          : "MIT",
+  "keywords"         : ["web development", "webdev", "workflow", "revisioning", "revision", "fingerprinting", "fingerprint", "cache", "cache buster", "cachebuster", "gulpplugin", "symfony bundle", "symfony 2.8.*"],
+  "homepage"         : "http://github.com/ajaxray/gulp-buster-bundle",
+  "type"             : "symfony-bundle",
+  "authors"          : [
+    {
+      "name" : "Anis Uddin Ahmad",
+      "email": "anis.programmer@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/http-kernel": "~2.8"
+  },
+  "autoload": {
+    "psr-4": {"Ajaxray\\GulpBusterBundle\\": ""}
+  },
+  "require-dev": {
+    "symfony/framework-bundle": "~2.8",
+    "phpunit/phpunit": "~4.3"
+  }
+}

@@ -1,0 +1,6 @@
+composer.phar
+composer.lock
+.idea/
+vendor/
+/Tests/app/cache
+/Tests/app/logs
