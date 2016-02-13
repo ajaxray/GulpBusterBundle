@@ -9,3 +9,6 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+
+gulp_buster:
+    buster_path: "config/busters.json"

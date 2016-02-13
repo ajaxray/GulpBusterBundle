@@ -1,5 +1,6 @@
 <?php
 namespace Ajaxray\GulpBusterBundle;
+use Ajaxray\GulpBusterBundle\DependencyInjection\AjaxrayGulpBusterExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -8,4 +9,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class GulpBusterBundle extends Bundle
 {
+    public function getContainerExtension()
+    {
+        return new AjaxrayGulpBusterExtension();
+    }
 }

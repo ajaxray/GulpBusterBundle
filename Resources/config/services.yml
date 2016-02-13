@@ -1,0 +1,9 @@
+# parameters:
+#    ajaxray_gulp_buster.example.class: Ajaxray\TagBundle\Example
+
+services:
+  ajaxray_gulp_buster.twig_extension:
+    class: Ajaxray\GulpBusterBundle\Twig\BusterExtension
+    arguments: [ '@service_container' ]
+    tags:
+      - { name: twig.extension }

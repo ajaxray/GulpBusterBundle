@@ -8,7 +8,7 @@ require_once __DIR__.'/autoload.php';
 use Ajaxray\GulpBusterBundle\Tests\app\AppKernel;
 use Symfony\Component\HttpFoundation\Request;
 
-$kernel = new AppKernel('prod', false);
+$kernel = new AppKernel('dev', true);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 
