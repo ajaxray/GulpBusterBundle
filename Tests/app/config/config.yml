@@ -11,4 +11,4 @@ twig:
     strict_variables: "%kernel.debug%"
 
 gulp_buster:
-    busters_file: "config/busters.json"
+    busters_file: "%kernel.root_dir%/config/busters.json"
