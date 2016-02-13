@@ -13,10 +13,23 @@ this Bundle will help in cache busting with help of
 
 ## Installation
 
-Install the latest version with
-
+Install the latest version with  
 ```
 $ composer require ajaxray/gulp-buster-bundle
+```
+
+Then enable the bundle in AppKernel -      
+``` php
+<?php
+// app/AppKernel.php
+
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new Ajaxray\GulpBusterBundle\GulpBusterBundle(),
+    );
+}
 ```
 
 ## How to use
