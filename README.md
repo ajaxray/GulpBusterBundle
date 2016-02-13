@@ -4,13 +4,12 @@ GulpBusterBundle
 [![Build Status](https://travis-ci.org/ajaxray/GulpBusterBundle.svg?branch=master)](https://travis-ci.org/ajaxray/GulpBusterBundle)
 [![Coverage Status](https://coveralls.io/repos/github/ajaxray/GulpBusterBundle/badge.svg?branch=master)](https://coveralls.io/github/ajaxray/GulpBusterBundle?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/ajaxray/gulp-buster-bundle/v/stable)](https://packagist.org/packages/ajaxray/gulp-buster-bundle) 
-[![Total Downloads](https://poser.pugx.org/ajaxray/gulp-buster-bundle/downloads)](https://packagist.org/packages/ajaxray/gulp-buster-bundle) 
-[![Latest Unstable Version](https://poser.pugx.org/ajaxray/gulp-buster-bundle/v/unstable)](https://packagist.org/packages/ajaxray/gulp-buster-bundle) 
+[![Total Downloads](https://poser.pugx.org/ajaxray/gulp-buster-bundle/downloads)](https://packagist.org/packages/ajaxray/gulp-buster-bundle)  
 [![License](https://poser.pugx.org/ajaxray/gulp-buster-bundle/license)](https://packagist.org/packages/ajaxray/gulp-buster-bundle)
 
 When using **gulp** to manage assets of a Symfony application, 
 this Bundle will help in cache busting with help of 
-[gulp-buster](https://www.npmjs.com/package/gulp-buster) npm package.   
+[gulp-buster](https://www.npmjs.com/package/gulp-buster) package.   
 
 ## Installation
 
