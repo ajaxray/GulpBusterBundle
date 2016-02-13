@@ -57,10 +57,9 @@ class BusterExtension extends \Twig_Extension
 
     private function loadBustersFile()
     {
-        $rootDir     = $this->container->get('kernel')->getRootDir();
         $bustersPath = $this->container->getParameter('gulp_buster.busters_file');
 
-        $this->hashMap = json_decode(file_get_contents($rootDir . DIRECTORY_SEPARATOR . $bustersPath), true);
+        $this->hashMap = json_decode(file_get_contents($bustersPath), true);
     }
 
     private function adjustAssetPath()

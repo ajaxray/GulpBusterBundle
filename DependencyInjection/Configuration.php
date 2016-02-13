@@ -23,7 +23,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode( 'busters_file' )
-                    ->defaultValue("%kernel.root_dir%/busters.json")
+                    ->defaultValue("%kernel.root_dir%/../busters.json")
                 ->end()
                 ->scalarNode( 'web_dir' )
                     ->defaultValue("%kernel.root_dir%/../web")

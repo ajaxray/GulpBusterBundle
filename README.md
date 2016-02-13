@@ -40,7 +40,7 @@ That's all :)
 
 By default, this bundle assumes the following paths -
 
-- busters.json (or any other name) file : `%kernel.root_dir%/busters.json`
+- busters.json (or any other name) file : `%kernel.root_dir%/../busters.json`
 - web dir: `%kernel.root_dir%/../web`
 - gulp dir (the dir of your gulpfile.js): `%kernel.root_dir%/..`
 
