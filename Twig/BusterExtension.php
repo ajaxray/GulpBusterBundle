@@ -33,6 +33,9 @@ class BusterExtension extends \Twig_Extension
         $this->adjustAssetPath();
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function getFilters()
     {
         return [
