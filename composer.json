@@ -3,7 +3,7 @@
   "description"      : "Symfony Bundle to integrate gulp-buster npm package for cache busting",
   "minimum-stability": "stable",
   "license"          : "MIT",
-  "keywords"         : ["web development", "webdev", "workflow", "revisioning", "revision", "fingerprinting", "fingerprint", "cache", "cache buster", "cachebuster", "gulpplugin", "symfony bundle", "symfony 2.8.*"],
+  "keywords"         : ["web development", "webdev", "workflow", "revisioning", "revision", "fingerprinting", "fingerprint", "cache", "cache buster", "cachebuster", "gulpplugin", "symfony bundle", "symfony 2.8", "symfony3"],
   "homepage"         : "http://github.com/ajaxray/GulpBusterBundle",
   "type"             : "symfony-bundle",
   "authors"          : [
