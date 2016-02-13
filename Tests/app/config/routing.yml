@@ -1,3 +1,0 @@
-home:
-    path:      /
-    defaults:  { _controller: kernel:indexAction }

@@ -22,8 +22,6 @@
   },
   "require-dev": {
     "symfony/framework-bundle": "~2.8",
-    "phpunit/phpunit": "~4.3",
-    "symfony/console": "^3.0",
-    "symfony/process": "^3.0"
+    "phpunit/phpunit": "~4.3"
   }
 }
