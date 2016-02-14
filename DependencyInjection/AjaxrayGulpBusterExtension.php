@@ -20,13 +20,15 @@ class AjaxrayGulpBusterExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
+        $config        = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('gulp_buster.busters_file', $config[ 'busters_file' ]);
-        $container->setParameter('gulp_buster.web_dir', $config[ 'web_dir' ]);
-        $container->setParameter('gulp_buster.gulp_dir', $config[ 'gulp_dir' ]);
+        $container->setParameter('gulp_buster_paths', [
+            'busters_file' => $config['busters_file'],
+            'web_dir'      => $config['web_dir'],
+            'gulp_dir'     => $config['gulp_dir']
+        ]);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
     }
 

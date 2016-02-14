@@ -1,6 +1,6 @@
 services:
   ajaxray_gulp_buster.twig_extension:
     class: Ajaxray\GulpBusterBundle\Twig\BusterExtension
-    arguments: [ '@service_container' ]
+    arguments: [ '%gulp_buster_paths%' ]
     tags:
       - { name: twig.extension }

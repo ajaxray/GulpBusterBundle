@@ -73,4 +73,3 @@ gulp_buster:
     web_dir: "%kernel.root_dir%/relative/path/to/web/dir"    
     gulp_dir: "%kernel.root_dir%/relative/path/to/dir"    
 ```
-    

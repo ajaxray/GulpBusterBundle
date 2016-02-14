@@ -19,6 +19,11 @@
             <directory>Tests/app/</directory>
             <file>GulpBusterBundle.php</file>
         </blacklist>
+
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">Twig/</directory>
+            <directory suffix=".php">DependencyInjection//</directory>
+        </whitelist>
     </filter>
 
     <logging>

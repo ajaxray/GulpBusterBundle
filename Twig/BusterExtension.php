@@ -6,14 +6,12 @@
 
 namespace Ajaxray\GulpBusterBundle\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-
 class BusterExtension extends \Twig_Extension
 {
     /**
-     * @var ContainerInterface
+     * @var array
      */
-    protected $container;
+    protected $paths;
 
     /**
      * @var array
@@ -23,11 +21,11 @@ class BusterExtension extends \Twig_Extension
     /**
      * Constructor
      *
-     * @param ContainerInterface $container
+     * @param array
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct(array $paths)
     {
-        $this->container = $container;
+        $this->paths = $paths;
 
         $this->loadBustersFile();
         $this->adjustAssetPath();
@@ -57,17 +55,12 @@ class BusterExtension extends \Twig_Extension
 
     private function loadBustersFile()
     {
-        $bustersPath = $this->container->getParameter('gulp_buster.busters_file');
-
-        $this->hashMap = json_decode(file_get_contents($bustersPath), true);
+        $this->hashMap = json_decode(file_get_contents($this->paths['busters_file']), true);
     }
 
     private function adjustAssetPath()
     {
-        $webDir  = $this->container->getParameter('gulp_buster.web_dir');
-        $gulpDir = $this->container->getParameter('gulp_buster.gulp_dir');
-
-        $gulpToWeb = trim(str_replace($gulpDir, "", $webDir), '/');
+        $gulpToWeb = trim(str_replace($this->paths['gulp_dir'], "", $this->paths['web_dir']), '/');
 
         foreach ($this->hashMap as $path => $hash) {
             $this->hashMap[str_replace($gulpToWeb, "", $path)] = $hash;
