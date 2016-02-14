@@ -6,6 +6,7 @@ GulpBusterBundle
 [![Latest Stable Version](https://poser.pugx.org/ajaxray/gulp-buster-bundle/v/stable)](https://packagist.org/packages/ajaxray/gulp-buster-bundle) 
 [![Total Downloads](https://poser.pugx.org/ajaxray/gulp-buster-bundle/downloads)](https://packagist.org/packages/ajaxray/gulp-buster-bundle)
 [![License](https://poser.pugx.org/ajaxray/gulp-buster-bundle/license)](https://packagist.org/packages/ajaxray/gulp-buster-bundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/e01bebbb-6aa4-4188-910d-7f51c2503d1e/mini.png)](https://insight.sensiolabs.com/projects/e01bebbb-6aa4-4188-910d-7f51c2503d1e)
 
 When using **gulp** to manage assets of a Symfony application, 
 this Bundle will help in cache busting with help of 
